@@ -1,0 +1,189 @@
+[
+    {
+        "title": "tab 0",
+        "description": "default tab 0 description",
+        "keymap": [
+            {
+                "label": "button 1.1",
+                "description": "button 0",
+                "command": "a"
+            },
+            {
+                "label": "button 1.2",
+                "description": "button 1",
+                "command": "b"
+            },
+            {
+                "label": "button 1.3",
+                "description": "button 2",
+                "command": "c"
+            },
+            {
+                "label": "button 1.4",
+                "description": "button 3",
+                "command": "d"
+            },
+            {
+                "label": "button 1.5",
+                "description": "button 4",
+                "command": "e"
+            },
+            {
+                "label": "button 1.6",
+                "description": "button 5",
+                "command": "f"
+            },
+            {
+                "label": "button 1.7",
+                "description": "button 6",
+                "command": "g"
+            },
+            {
+                "label": "button 1.8",
+                "description": "button 7",
+                "command": "h"
+            },
+            {
+                "label": "button 1.9",
+                "description": "button 8",
+                "command": "i"
+            },
+            {
+                "label": "button 1.10",
+                "description": "button 9",
+                "command": "j"
+            },
+            {
+                "label": "button 1.11",
+                "description": "button 10",
+                "command": "k"
+            },
+            {
+                "label": "button 1.12",
+                "description": "button 11",
+                "command": "l"
+            },
+            {
+                "label": "button 1.13",
+                "description": "button 12",
+                "command": "m"
+            },
+            {
+                "label": "button 1.14",
+                "description": "button 13",
+                "command": "n"
+            },
+            {
+                "label": "button 1.15",
+                "description": "button 14",
+                "command": "o"
+            },
+            {
+                "label": "button 1.16",
+                "description": "button 15",
+                "command": "p"
+            }
+        ]
+    },
+    {
+        "title": "tab 1",
+        "description": "default tab 1 description",
+        "keymap": [
+            {
+                "label": "button 2.1",
+                "description": "button 0",
+                "command": "aa"
+            },
+            {
+                "label": "button 2.2",
+                "description": "button 1",
+                "command": "bb"
+            },
+            {
+                "label": "button 2.3",
+                "description": "button 2",
+                "command": "cc"
+            },
+            {
+                "label": "button 2.4",
+                "description": "button 3",
+                "command": "dd"
+            },
+            {
+                "label": "button 2.5",
+                "description": "button 4",
+                "command": "ee"
+            },
+            {
+                "label": "button 2.6",
+                "description": "button 5",
+                "command": "ff"
+            },
+            {
+                "label": "button 2.7",
+                "description": "button 6",
+                "command": "gg"
+            },
+            {
+                "label": "button 2.8",
+                "description": "button 7",
+                "command": "hh"
+            },
+            {
+                "label": "button 2.9",
+                "description": "button 8",
+                "command": "ii"
+            },
+            {
+                "label": "button 2.10",
+                "description": "button 9",
+                "command": "jj"
+            },
+            {
+                "label": "button 2.11",
+                "description": "button 10",
+                "command": "kk"
+            },
+            {
+                "label": "button 2.12",
+                "description": "button 11",
+                "command": "ll"
+            },
+            {
+                "label": "button 2.13",
+                "description": "button 12",
+                "command": "mm"
+            },
+            {
+                "label": "button 2.14",
+                "description": "button 13",
+                "command": "nn"
+            },
+            {
+                "label": "button 2.15",
+                "description": "button 14",
+                "command": "oo"
+            },
+            {
+                "label": "button 2.16",
+                "description": "button 15",
+                "command": "pp"
+            },
+            {
+                "label": "button 2.17",
+                "description": "button 16",
+                "command": "qq"
+            },
+            {
+                "label": "button 2.18",
+                "description": "button 17",
+                "command": "rr"
+            },
+            {
+                "label": "button 2.19",
+                "description": "button 18",
+                "command": "ss"
+            }
+        ]
+    }
+]
