@@ -53,6 +53,8 @@ the system up, login to default user and start `Openbox`
 
     # Start the pcmanfm desktop manager, lets you have desktop icons etc
     pcmanfm --desktop &
+    # you can probably disable this once the initial setup is complete
+    # to minimize active processes, replace with your pi-deck application
 
     # Launch desktop prefs dialog on first launch, lets you set preferences
     # disable trash icon, etc. Can be disabled after.
@@ -95,6 +97,12 @@ the system up, login to default user and start `Openbox`
 9. Install python dependencies for the PiDeck application
     ```bash
     sudo apt install -y python3 python-is-python3 python3-pip python3-venv \
-    python3-tk python3-ujson python3-pyserial
+    python3-tk python3-ujson python3-serial
     ```
+    It might be `python3-pyserial` on Fedora
+
+10. Install the `micropython` firmware on the Pico using Thonny. That worked
+better for me, `BOOTSEL` + pasting `.uf2` file did not work for me on Fedora.
+
+11. Load the Pico code onto board.
 
