@@ -178,8 +178,6 @@ class PiDeckUi(Tk):
                 self.keypad_frame,
                 text=button.label,
                 command=partial(send_serial_msg, button.command),
-                padx=10,
-                pady=5,
             ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
 
         for i in range(num_rows):
