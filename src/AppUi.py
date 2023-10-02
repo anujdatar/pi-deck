@@ -44,6 +44,37 @@ class DeckFrame(Frame):
         self.pack(fill="both", expand=True)
 
 
+class DeckModal(Toplevel):
+    def __init__(self, parent: Tk, title: str = ""):
+        super().__init__(parent)
+        self.title(title)
+        self.grab_set()
+        self.transient(parent)
+
+    def close(self) -> None:
+        self.grab_release()
+        self.destroy()
+
+
+def open_power_dialog(parent: Tk, title: str = "") -> DeckModal:
+    power_dialog = DeckModal(parent, title)
+    power_dialog.title("Power Menu")
+
+    quit_btn = Button(power_dialog, text="Quit", command=parent.quit)
+    quit_btn.pack(side="left", anchor="center", padx=5, pady=10)
+
+    reboot_btn = Button(power_dialog, text="Reboot", command=reboot)
+    reboot_btn.pack(side="left", anchor="center", padx=5, pady=10)
+
+    shutdown_btn = Button(power_dialog, text="Shutdown", command=shutdown)
+    shutdown_btn.pack(side="left", anchor="center", padx=5, pady=10)
+
+    cancel_btn = Button(power_dialog, text="Cancel", command=power_dialog.close)
+    cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
+
+    return power_dialog
+
+
 class PiDeckUi(Tk):
     def __init__(self, keymaps: List[KeymapTab]):
         super().__init__()
