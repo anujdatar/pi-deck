@@ -33,15 +33,6 @@ def shutdown():
     )
 
 
-def app_quit(parent: Tk) -> None:
-    subprocess.run(
-        ["pcmanfm", "--desktop", "&"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-    parent.quit()
-
-
 def print_command(a: str) -> None:
     print(f"commend: {a}")
 
@@ -97,9 +88,7 @@ def open_power_dialog(parent: Tk):
     cancel_btn = Button(power_dialog, text="Cancel", command=power_dialog.close)
     cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
-    quit_btn = Button(
-        power_dialog, text="Quit", command=partial(app_quit, parent)
-    )
+    quit_btn = Button(power_dialog, text="Quit", command=parent.quit)
     quit_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
     reboot_btn = Button(power_dialog, text="Reboot", command=reboot)
