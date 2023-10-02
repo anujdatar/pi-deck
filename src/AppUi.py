@@ -1,8 +1,25 @@
 from functools import partial
-from tkinter import Button, Frame, IntVar, PhotoImage, Radiobutton, Tk, ttk
+from tkinter import (
+    Button,
+    Frame,
+    IntVar,
+    PhotoImage,
+    Radiobutton,
+    Tk,
+    Toplevel,
+    ttk,
+)
 from typing import List, Optional, Callable
 
 from src import Key, KeymapTab, keymap_json_loader, send_serial_msg
+
+
+def reboot():
+    print("reboot")
+
+
+def shutdown():
+    print("shutdown")
 
 
 def dummy_function() -> None:
