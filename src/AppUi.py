@@ -22,10 +22,6 @@ def shutdown():
     print("shutdown")
 
 
-def dummy_function() -> None:
-    print("Hi! I am button...")
-
-
 def print_command(a: str) -> None:
     print(f"commend: {a}")
 
@@ -35,11 +31,12 @@ class DeckButton(Button):
         self,
         parent: Optional[Frame] = None,
         text: str = "",
-        command: Callable[[], None] = dummy_function,
+        command: Optional[Callable[[], None]] = None,
     ):
         super().__init__(parent)
         self.configure(text=text)
-        self.configure(command=command)
+        if command is not None:
+            self.configure(command=command)
 
 
 class DeckImgButton(Button):
@@ -47,12 +44,13 @@ class DeckImgButton(Button):
         self,
         parent: Optional[Frame] = None,
         image_path: str = "",
-        command: Callable[[], None] = dummy_function,
+        command: Optional[Callable[[], None]] = None,
     ):
         super().__init__(parent)
         self.btn_image = PhotoImage(file=image_path)
         self.configure(image=self.btn_image)
-        self.configure(command=command)
+        if command is not None:
+            self.configure(command=command)
 
 
 class DeckFrame(Frame):
