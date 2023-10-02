@@ -89,6 +89,30 @@ def open_power_dialog(parent: Tk):
     cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
 
+def generate_keypad_grid(parent: Frame, buttons: List[Key]) -> Frame:
+    keypad_frame = Frame(parent)
+    keypad_frame.pack(fill="both", expand=True)
+
+    num_buttons = len(buttons)
+    max_columns = int(num_buttons**0.5) + 1
+    num_rows = (num_buttons + max_columns - 1) // max_columns
+    num_columns = (num_buttons + num_rows - 1) // num_rows
+
+    for i, button in enumerate(buttons):
+        row = i // num_columns
+        column = i % num_columns
+        DeckButton(
+            keypad_frame,
+            text=button.label,
+            command=partial(send_serial_msg, button.command),
+        ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
+
+    for i in range(num_rows):
+        keypad_frame.grid_rowconfigure(i, weight=1)
+    for j in range(num_columns):
+        keypad_frame.grid_columnconfigure(j, weight=1)
+
+    return keypad_frame
 
 
 class PiDeckUi(Tk):
@@ -130,7 +154,7 @@ class PiDeckUi(Tk):
             side="bottom", anchor="center", padx=5, pady=10, ipadx=10, ipady=15
         )
 
-        self.keypad_frame = None
+        self.keypad_frame: Frame | None = None
 
         # add the tab switcher radio buttons
         for index, tab in enumerate(self.keymaps):
@@ -152,38 +176,17 @@ class PiDeckUi(Tk):
             )
 
         # add the initial buttons
-        self.generate_keypad_grid(self.keymaps[self.active_tab.get()].keymap)
+        self.keypad_frame = generate_keypad_grid(
+            self.app_container, self.keymaps[self.active_tab.get()].keymap
+        )
 
     def set_active_tab(self):
         new_tab = self.active_tab.get()
-        self.generate_keypad_grid(self.keymaps[new_tab].keymap)
-
-    def generate_keypad_grid(self, buttons: List[Key]):
         if self.keypad_frame is not None:
             self.keypad_frame.destroy()
-
-        self.keypad_frame = Frame(self.app_container)
-        self.keypad_frame.pack(fill="both", expand=True)
-
-        num_buttons = len(buttons)
-        max_columns = int(num_buttons**0.5) + 1
-        num_rows = (num_buttons + max_columns - 1) // max_columns
-        num_columns = (num_buttons + num_rows - 1) // num_rows
-        print(num_buttons, max_columns, num_rows, num_columns)
-
-        for i, button in enumerate(buttons):
-            row = i // num_columns
-            column = i % num_columns
-            Button(
-                self.keypad_frame,
-                text=button.label,
-                command=partial(send_serial_msg, button.command),
-            ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
-
-        for i in range(num_rows):
-            self.keypad_frame.grid_rowconfigure(i, weight=1)
-        for j in range(num_columns):
-            self.keypad_frame.grid_columnconfigure(j, weight=1)
+        self.keypad_frame = generate_keypad_grid(
+            self.app_container, self.keymaps[new_tab].keymap
+        )
 
 
 if __name__ == "__main__":
