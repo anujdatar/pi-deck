@@ -99,8 +99,8 @@ class PiDeckUi(Tk):
 
         # set app root's attributes
         self.title("PiDeck")
-        self.attributes("-fullscreen", False)  # set fullscreen  # type:ignore
-        self.attributes("-zoomed", True)  # set maximized  # type:ignore
+        self.attributes("-fullscreen", True)  # set fullscreen  # type:ignore
+        # self.attributes("-zoomed", True)  # set maximized  # type:ignore
         # self.overrideredirect(True)  # remove titlebar
 
         # var to store active tab, init at tab 0
