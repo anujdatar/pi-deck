@@ -1,4 +1,5 @@
 from functools import partial
+import subprocess
 from tkinter import (
     Button,
     Frame,
@@ -15,11 +16,21 @@ from src import Key, KeymapTab, keymap_json_loader, send_serial_msg
 
 
 def reboot():
-    print("reboot")
+    # print("reboot")
+    subprocess.run(
+        ["systemctl", "reboot"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
 
 
 def shutdown():
-    print("shutdown")
+    # print("shutdown")
+    subprocess.run(
+        ["systemctl", "poweroff"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
 
 
 def print_command(a: str) -> None:
