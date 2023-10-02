@@ -73,9 +73,8 @@ class DeckModal(Toplevel):
         self.destroy()
 
 
-def open_power_dialog(parent: Tk, title: str = "") -> DeckModal:
-    power_dialog = DeckModal(parent, title)
-    power_dialog.title("Power Menu")
+def open_power_dialog(parent: Tk):
+    power_dialog = DeckModal(parent, "PiDeck: Power Menu")
 
     quit_btn = Button(power_dialog, text="Quit", command=parent.quit)
     quit_btn.pack(side="left", anchor="center", padx=5, pady=10)
@@ -89,7 +88,7 @@ def open_power_dialog(parent: Tk, title: str = "") -> DeckModal:
     cancel_btn = Button(power_dialog, text="Cancel", command=power_dialog.close)
     cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
-    return power_dialog
+
 
 
 class PiDeckUi(Tk):
