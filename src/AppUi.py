@@ -122,12 +122,15 @@ class PiDeckUi(Tk):
             side="left", fill="x", expand=True, padx=5, pady=5
         )
 
-        self.power_btn = Button(self.top_row, text="Power", command=self.quit)
+        self.power_btn = Button(
+            self.top_row, text="Power", command=self.open_power_dialog
+        )
         self.power_btn.pack(
-            side="bottom", anchor="center", padx=5, pady=10, ipady=10
+            side="bottom", anchor="center", padx=5, pady=10, ipadx=10, ipady=15
         )
 
         self.keypad_frame = None
+        self.power_dialog = None
 
         # add the tab switcher radio buttons
         for index, tab in enumerate(self.keymaps):
@@ -145,7 +148,7 @@ class PiDeckUi(Tk):
                 padx=2,
                 pady=5,
                 ipadx=5,
-                ipady=5,
+                ipady=10,
             )
 
         # add the initial buttons
@@ -183,6 +186,9 @@ class PiDeckUi(Tk):
             self.keypad_frame.grid_rowconfigure(i, weight=1)
         for j in range(num_columns):
             self.keypad_frame.grid_columnconfigure(j, weight=1)
+
+    def open_power_dialog(self):
+        self.power_dialog = open_power_dialog(self, "Power Menu")
 
 
 if __name__ == "__main__":
