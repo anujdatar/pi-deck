@@ -12,7 +12,7 @@ from tkinter import (
 )
 from typing import List, Optional, Callable
 
-from src import Key, KeymapTab, keymap_json_loader, send_serial_msg
+from src import Key, KeymapTab, keymap_json_loader, send_i2c_msg
 
 
 def reboot():
@@ -85,7 +85,9 @@ class DeckModal(Toplevel):
 def open_power_dialog(parent: Tk):
     power_dialog = DeckModal(parent, "PiDeck: Power Menu")
 
-    cancel_btn = Button(power_dialog, text="Cancel", command=power_dialog.close)
+    cancel_btn = Button(
+        power_dialog, text="Cancel", command=power_dialog.close
+    )
     cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
     quit_btn = Button(power_dialog, text="Quit", command=parent.quit)
@@ -113,7 +115,7 @@ def generate_keypad_grid(parent: Frame, buttons: List[Key]) -> Frame:
         DeckButton(
             keypad_frame,
             text=button.label,
-            command=partial(send_serial_msg, button.command),
+            command=partial(send_i2c_msg, button.command),
         ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
 
     for i in range(num_rows):
