@@ -8,7 +8,7 @@ def send_i2c_msg(message: str):
     I2Cbus = smbus.SMBus(1)
     data_to_send = message.encode("utf-8")
     I2Cbus.write_i2c_block_data(arduino_address, 0, list(data_to_send))
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 
 if __name__ == "__main__":
