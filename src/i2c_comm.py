@@ -15,4 +15,4 @@ def send_i2c_msg(message: str):
 
 
 if __name__ == "__main__":
-    send_i2c_msg("test")
+    send_i2c_msg("v+")
