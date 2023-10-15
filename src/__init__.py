@@ -4,7 +4,7 @@ from .serial_comm import send_serial_msg
 from .i2c_comm import send_i2c_msg
 from .utils import reboot, shutdown
 
-from .AppUi import PiDeckUi
+from .ui_elements import PiDeckUi
 
 __all__ = [
     "Key",
