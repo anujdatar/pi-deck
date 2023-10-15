@@ -1,5 +1,4 @@
 from functools import partial
-import subprocess
 from tkinter import (
     Button,
     Frame,
@@ -13,28 +12,7 @@ from tkinter import (
 from typing import List, Optional, Callable
 
 from src import Key, KeymapTab, keymap_json_loader, send_i2c_msg
-
-
-def reboot():
-    # print("reboot")
-    subprocess.run(
-        ["systemctl", "reboot"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-
-
-def shutdown():
-    # print("shutdown")
-    subprocess.run(
-        ["systemctl", "poweroff"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-
-
-def print_command(a: str) -> None:
-    print(f"commend: {a}")
+from utils import reboot, shutdown
 
 
 class DeckButton(Button):
@@ -85,9 +63,7 @@ class DeckModal(Toplevel):
 def open_power_dialog(parent: Tk):
     power_dialog = DeckModal(parent, "PiDeck: Power Menu")
 
-    cancel_btn = Button(
-        power_dialog, text="Cancel", command=power_dialog.close
-    )
+    cancel_btn = Button(power_dialog, text="Cancel", command=power_dialog.close)
     cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
     quit_btn = Button(power_dialog, text="Quit", command=parent.quit)
@@ -149,9 +125,7 @@ class PiDeckUi(Tk):
         self.top_row = Frame(self.app_container)
         self.top_row.pack(fill="x")
 
-        self.tab_selection_container = ttk.LabelFrame(
-            self.top_row, text="Select Tab"
-        )
+        self.tab_selection_container = ttk.LabelFrame(self.top_row, text="Select Tab")
         self.tab_selection_container.pack(
             side="left", fill="x", expand=True, padx=5, pady=5
         )
