@@ -1,5 +1,9 @@
-import smbus
 import time
+
+try:
+    import smbus
+except ImportError:
+    import smbus2 as smbus
 
 arduino_address = 11
 
