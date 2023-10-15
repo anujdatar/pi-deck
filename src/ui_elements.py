@@ -11,7 +11,7 @@ from tkinter import (
 )
 from typing import List, Optional, Callable
 
-from src import Key, KeymapTab, keymap_json_loader, send_i2c_msg, reboot, shutdown
+from src import Key, keymap_json_loader, send_i2c_msg, reboot, shutdown
 
 
 class DeckButton(Button):
@@ -102,9 +102,9 @@ def generate_keypad_grid(parent: Frame, buttons: List[Key]) -> Frame:
 
 
 class PiDeckUi(Tk):
-    def __init__(self, keymaps: List[KeymapTab]):
+    def __init__(self):
         super().__init__()
-        self.keymaps = keymaps
+        self.keymaps = keymap_json_loader()
 
         # set app root's attributes
         self.title("PiDeck")
