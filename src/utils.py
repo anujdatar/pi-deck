@@ -1,4 +1,12 @@
 import subprocess
+import serial
+
+try:
+    import smbus
+except ImportError:
+    import smbus2 as smbus
+
+# import time
 
 
 def print_command(a: str) -> None:
@@ -19,3 +27,20 @@ def shutdown():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
+
+
+def send_serial_msg(msg: str) -> None:
+    ser = serial.Serial("/dev/serial0", baudrate=115200, timeout=1)
+    ser.write(msg.encode())
+    ser.close()
+
+
+def send_i2c_msg(message: str):
+    arduino_address = 11
+    I2Cbus = smbus.SMBus(1)
+    data_to_send = message.encode("utf-8")
+    I2Cbus.write_i2c_block_data(arduino_address, 0, list(data_to_send))
+    # time.sleep(0.1)
+
+    # data_to_send = [ord(char) for char in message]
+    # I2Cbus.write_i2c_block_data(arduino_address, 0, data_to_send)
