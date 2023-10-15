@@ -1,6 +1,5 @@
 from .types import Key, KeymapTab
-from .load_keymap import keymap_json_loader
-from .utils import reboot, shutdown, send_i2c_msg, send_serial_msg
+from .utils import keymap_json_loader, reboot, shutdown, send_i2c_msg, send_serial_msg
 
 from .ui_elements import PiDeckUi
 
