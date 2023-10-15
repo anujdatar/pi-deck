@@ -11,8 +11,7 @@ from tkinter import (
 )
 from typing import List, Optional, Callable
 
-from src import Key, KeymapTab, keymap_json_loader, send_i2c_msg
-from utils import reboot, shutdown
+from src import Key, KeymapTab, keymap_json_loader, send_i2c_msg, reboot, shutdown
 
 
 class DeckButton(Button):
