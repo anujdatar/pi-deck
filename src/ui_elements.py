@@ -112,10 +112,6 @@ class PiDeckUi(Tk):
         # self.attributes("-zoomed", True)  # set maximized  # type:ignore
         # self.overrideredirect(True)  # remove titlebar
 
-        # var to store active tab, init at tab 0
-        self.active_tab = IntVar()
-        self.active_tab.set(0)
-
         # create app container
         self.app_container = Frame(self)
         self.app_container.pack(fill="both", expand=True)
@@ -124,8 +120,14 @@ class PiDeckUi(Tk):
         self.top_row = Frame(self.app_container)
         self.top_row.pack(fill="x")
 
-        self.tab_selection_container = ttk.LabelFrame(self.top_row, text="Select Tab")
-        self.tab_selection_container.pack(
+        self.keypad_frame: Frame | None = None
+
+        # var to store active tab, init at tab 0
+        self.active_tab = IntVar()
+        self.active_tab.set(0)
+
+        self.tab_selection_frame = ttk.LabelFrame(self.top_row, text="Select Tab")
+        self.tab_selection_frame.pack(
             side="left", fill="x", expand=True, padx=5, pady=5
         )
 
@@ -138,12 +140,16 @@ class PiDeckUi(Tk):
             side="bottom", anchor="center", padx=5, pady=10, ipadx=10, ipady=15
         )
 
-        self.keypad_frame: Frame | None = None
+        self.create_tab_selectors()
+        # add the initial buttons
+        self.keypad_frame = generate_keypad_grid(
+            self.app_container, self.keymaps[self.active_tab.get()].keymap
+        )
 
-        # add the tab switcher radio buttons
+    def create_tab_selectors(self):
         for index, tab in enumerate(self.keymaps):
             Radiobutton(
-                self.tab_selection_container,
+                self.tab_selection_frame,
                 text=tab.title,
                 indicatoron=False,
                 variable=self.active_tab,
@@ -159,11 +165,6 @@ class PiDeckUi(Tk):
                 ipady=10,
             )
 
-        # add the initial buttons
-        self.keypad_frame = generate_keypad_grid(
-            self.app_container, self.keymaps[self.active_tab.get()].keymap
-        )
-
     def set_active_tab(self):
         new_tab = self.active_tab.get()
         if self.keypad_frame is not None:
@@ -171,11 +172,3 @@ class PiDeckUi(Tk):
         self.keypad_frame = generate_keypad_grid(
             self.app_container, self.keymaps[new_tab].keymap
         )
-
-
-if __name__ == "__main__":
-    # fetch the keymap form file
-    imported_keymap = keymap_json_loader()
-
-    app = PiDeckUi(imported_keymap)
-    app.mainloop()
