@@ -32,8 +32,8 @@ def shutdown():
     )
 
 
-def keymap_json_loader() -> List[KeymapTab]:
-    with open("keymap.json", "r") as keymap_file:
+def keymap_json_loader(file_path: str = "keymap.json") -> List[KeymapTab]:
+    with open(file_path, "r") as keymap_file:
         json_data = json.load(keymap_file)
 
     tabs: List[KeymapTab] = []
