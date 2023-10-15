@@ -50,8 +50,4 @@ void receiveData(int bytecount) {
       Media_Keyboard.write(currentChar);
     }
   }
-
-  // KEY_FAST_FORWARD
-  // KEY_REWIND
-
 }
