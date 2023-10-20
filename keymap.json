@@ -167,7 +167,7 @@
             {
                 "label": "Mute",
                 "description": "Volume Mute",
-                "command": "mute",
+                "command": "mt",
                 "row": 0,
                 "column": 2,
                 "width": 1,
@@ -185,7 +185,7 @@
             {
                 "label": "Prev",
                 "description": "Previous Track",
-                "command": "prev",
+                "command": "t-",
                 "row": 1,
                 "column": 0,
                 "width": 1,
@@ -194,7 +194,7 @@
             {
                 "label": "Play/Pause",
                 "description": "Play/Pause",
-                "command": "pause",
+                "command": "pp",
                 "row": 1,
                 "column": 1,
                 "width": 2,
@@ -203,7 +203,7 @@
             {
                 "label": "Stop",
                 "description": "Stop",
-                "command": "stop",
+                "command": "st",
                 "row": 1,
                 "column": 3,
                 "width": 1,
@@ -212,7 +212,7 @@
             {
                 "label": "Next",
                 "description": "Next Track",
-                "command": "next",
+                "command": "t+",
                 "row": 1,
                 "column": 4,
                 "width": 1,
