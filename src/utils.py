@@ -43,6 +43,7 @@ def keymap_json_loader(file_path: str = "keymap.json") -> List[KeymapTab]:
             KeymapTab(
                 title=tab_data["title"],
                 description=tab_data["description"],
+                packing=tab_data["packing"],
                 keymap=keys,
             )
         )

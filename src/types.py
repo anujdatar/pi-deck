@@ -22,5 +22,5 @@ class Keymap:
 class KeymapTab:
     title: str
     description: str
+    packing: str
     keymap: List[Key] = field(default_factory=list)
-    # keymap: Keymap
