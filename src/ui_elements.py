@@ -59,20 +59,21 @@ class DeckModal(Toplevel):
         self.destroy()
 
 
-def open_power_dialog(parent: Tk):
-    power_dialog = DeckModal(parent, "PiDeck: Power Menu")
+class PowerDialog(DeckModal):
+    def __init__(self, parent: Tk):
+        super().__init__(parent, "PiDeck: Power Menu")
 
-    cancel_btn = Button(power_dialog, text="Cancel", command=power_dialog.close)
-    cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
+        cancel_btn = Button(self, text="Cancel", command=self.close)
+        cancel_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
-    quit_btn = Button(power_dialog, text="Quit", command=parent.quit)
-    quit_btn.pack(side="left", anchor="center", padx=5, pady=10)
+        quit_btn = Button(self, text="Quit", command=parent.quit)
+        quit_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
-    reboot_btn = Button(power_dialog, text="Reboot", command=reboot)
-    reboot_btn.pack(side="left", anchor="center", padx=5, pady=10)
+        reboot_btn = Button(self, text="Reboot", command=reboot)
+        reboot_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
-    shutdown_btn = Button(power_dialog, text="Shutdown", command=shutdown)
-    shutdown_btn.pack(side="left", anchor="center", padx=5, pady=10)
+        shutdown_btn = Button(self, text="Shutdown", command=shutdown)
+        shutdown_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
 
 def generate_keypad_grid(parent: Frame, buttons: List[Key]) -> Frame:
@@ -112,20 +113,22 @@ class PiDeckUi(Tk):
         # self.attributes("-zoomed", True)  # set maximized  # type:ignore
         # self.overrideredirect(True)  # remove titlebar
 
-        # create app container
+        # *************************************************************
+        # define basic app structure
         self.app_container = Frame(self)
         self.app_container.pack(fill="both", expand=True)
 
-        # top row of app container, tab selection and power btn
         self.top_row = Frame(self.app_container)
         self.top_row.pack(fill="x")
 
         self.keypad_frame: Frame | None = None
 
+        # *************************************************************
         # var to store active tab, init at tab 0
         self.active_tab = IntVar()
         self.active_tab.set(0)
 
+        # *************************************************************
         self.tab_selection_frame = ttk.LabelFrame(self.top_row, text="Select Tab")
         self.tab_selection_frame.pack(
             side="left", fill="x", expand=True, padx=5, pady=5
@@ -134,13 +137,15 @@ class PiDeckUi(Tk):
         self.power_btn = Button(
             self.top_row,
             text="Power",
-            command=partial(open_power_dialog, self),
+            command=partial(PowerDialog, self),
         )
         self.power_btn.pack(
             side="bottom", anchor="center", padx=5, pady=10, ipadx=10, ipady=15
         )
 
         self.create_tab_selectors()
+
+        # *************************************************************
         # add the initial buttons
         self.keypad_frame = generate_keypad_grid(
             self.app_container, self.keymaps[self.active_tab.get()].keymap
