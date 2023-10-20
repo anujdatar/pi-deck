@@ -76,6 +76,67 @@ class PowerDialog(DeckModal):
         shutdown_btn.pack(side="left", anchor="center", padx=5, pady=10)
 
 
+class KeypadFrame(Frame):
+    def __init__(self, parent: Frame, packing: str, buttons: List[Key]):
+        super().__init__(parent)
+        self.pack(fill="both", expand=True)
+
+        self.packing = packing
+        self.buttons = buttons
+
+        if self.packing == "auto":
+            self.auto_pack()
+        else:
+            self.manual_pack()
+
+    def auto_pack(self) -> None:
+        num_buttons = len(self.buttons)
+        max_columns = int(num_buttons**0.5) + 1
+        num_rows = (num_buttons + max_columns - 1) // max_columns
+        num_columns = (num_buttons + num_rows - 1) // num_rows
+
+        for i, button in enumerate(self.buttons):
+            row = i // num_columns
+            column = i % num_columns
+            DeckButton(
+                self,
+                text=button.label,
+                command=partial(send_i2c_msg, button.command),
+            ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
+
+        self.expand_to_fit(num_rows, num_columns)
+
+    def manual_pack(self) -> None:
+        for button in self.buttons:
+            DeckButton(
+                self,
+                text=button.label,
+                command=partial(send_i2c_msg, button.command),
+            ).grid(
+                row=button.row if button.row is not None else 0,
+                column=button.column if button.column is not None else 0,
+                padx=5,
+                pady=5,
+                sticky="nsew",
+                rowspan=button.height if button.height is not None else 1,
+                columnspan=button.width if button.width is not None else 1,
+            )
+        # print(type(self.buttons[-1].row), type(self.buttons[-1].column))
+        num_rows: int = (
+            self.buttons[-1].row + 1 if self.buttons[-1].row is not None else 1
+        )
+        num_columns: int = (
+            self.buttons[-1].column + 1 if self.buttons[-1].column is not None else 1
+        )
+        self.expand_to_fit(num_rows, num_columns)
+
+    def expand_to_fit(self, rows: int, cols: int) -> None:
+        for i in range(rows):
+            self.grid_rowconfigure(i, weight=1)
+        for j in range(cols):
+            self.grid_columnconfigure(j, weight=1)
+
+
 def generate_keypad_grid(parent: Frame, buttons: List[Key]) -> Frame:
     keypad_frame = Frame(parent)
     keypad_frame.pack(fill="both", expand=True)
@@ -147,8 +208,11 @@ class PiDeckUi(Tk):
 
         # *************************************************************
         # add the initial buttons
-        self.keypad_frame = generate_keypad_grid(
-            self.app_container, self.keymaps[self.active_tab.get()].keymap
+        # self.keypad_frame = generate_keypad_grid(
+        #     self.app_container, self.keymaps[self.active_tab.get()].keymap
+        # )
+        self.keypad_frame = KeypadFrame(
+            self.app_container, self.keymaps[0].packing, self.keymaps[0].keymap
         )
 
     def create_tab_selectors(self):
@@ -174,6 +238,11 @@ class PiDeckUi(Tk):
         new_tab = self.active_tab.get()
         if self.keypad_frame is not None:
             self.keypad_frame.destroy()
-        self.keypad_frame = generate_keypad_grid(
-            self.app_container, self.keymaps[new_tab].keymap
+        # self.keypad_frame = generate_keypad_grid(
+        #     self.app_container, self.keymaps[new_tab].keymap
+        # )
+        self.keypad_frame = KeypadFrame(
+            self.app_container,
+            self.keymaps[new_tab].packing,
+            self.keymaps[new_tab].keymap,
         )
