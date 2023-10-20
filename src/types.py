@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Union
 
 
 @dataclass
@@ -7,6 +7,10 @@ class Key:
     label: str
     description: str
     command: str
+    row: Union[int, None] = None
+    column: Union[int, None] = None
+    width: Union[int, None] = None
+    height: Union[int, None] = None
 
 
 @dataclass
