@@ -14,7 +14,7 @@ from typing import List, Optional, Callable
 from src import Key, keymap_json_loader, send_i2c_msg, reboot, shutdown
 
 
-class DeckButton(Button):
+class DeckTxtButton(Button):
     def __init__(
         self,
         parent: Optional[Frame] = None,
@@ -98,7 +98,7 @@ class KeypadFrame(Frame):
         for i, button in enumerate(self.buttons):
             row = i // num_columns
             column = i % num_columns
-            DeckButton(
+            DeckTxtButton(
                 self,
                 text=button.label,
                 command=partial(send_i2c_msg, button.command),
@@ -115,7 +115,7 @@ class KeypadFrame(Frame):
                 or button.width is None
             ):
                 raise ValueError("Row and column must be specified for manual packing.")
-            DeckButton(
+            DeckTxtButton(
                 self,
                 text=button.label,
                 command=partial(send_i2c_msg, button.command),
