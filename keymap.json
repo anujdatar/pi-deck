@@ -1,150 +1,222 @@
 [
     {
-        "title": "tab 0",
-        "description": "default tab 0 description",
+        "title": "Counter Strike 2",
+        "description": "Counter Strike 2 Buy Menu",
         "packing": "manual",
         "keymap": [
             {
-                "label": "button 1.1",
-                "description": "button 0",
-                "command": "a",
+                "label": "Kevlar",
+                "description": "Kevlar Vest Only",
+                "command": "b11",
                 "row": 0,
                 "column": 0,
                 "width": 1,
                 "height": 1
             },
             {
-                "label": "button 1.2",
-                "description": "button 1",
-                "command": "b",
-                "row": 0,
-                "column": 1,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.3",
-                "description": "button 2",
-                "command": "c",
-                "row": 0,
-                "column": 2,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.4",
-                "description": "button 3",
-                "command": "d",
-                "row": 0,
-                "column": 3,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.5",
-                "description": "button 4",
-                "command": "e",
+                "label": "Kevlar+Helmet",
+                "description": "Kevlar and Helmet",
+                "command": "b12",
                 "row": 1,
                 "column": 0,
                 "width": 1,
                 "height": 1
             },
             {
-                "label": "button 1.6",
-                "description": "button 5",
-                "command": "f",
-                "row": 1,
-                "column": 1,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.7",
-                "description": "button 6",
-                "command": "g",
-                "row": 1,
-                "column": 2,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.8",
-                "description": "button 7",
-                "command": "h",
-                "row": 1,
-                "column": 3,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.9",
-                "description": "button 8",
-                "command": "i",
+                "label": "Zeus",
+                "description": "Zeus x27 Taser",
+                "command": "b13",
                 "row": 2,
                 "column": 0,
                 "width": 1,
                 "height": 1
             },
             {
-                "label": "button 1.10",
-                "description": "button 9",
-                "command": "j",
-                "row": 2,
-                "column": 1,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.11",
-                "description": "button 10",
-                "command": "k",
-                "row": 2,
-                "column": 2,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.12",
-                "description": "button 11",
-                "command": "l",
-                "row": 2,
-                "column": 3,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "button 1.13",
-                "description": "button 12",
-                "command": "m",
+                "label": "(CT) Defuse Kit",
+                "description": "Defuse Kit",
+                "command": "b14",
                 "row": 3,
                 "column": 0,
                 "width": 1,
                 "height": 1
             },
             {
-                "label": "button 1.14",
-                "description": "button 13",
-                "command": "n",
+                "label": "Glock/USP/P2000",
+                "description": "Default Pistol",
+                "command": "b21",
+                "row": 0,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Dualies",
+                "description": "Dual Barettas",
+                "command": "b22",
+                "row": 1,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "P250",
+                "description": "P250",
+                "command": "b23",
+                "row": 2,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Tec9/Five-SeveN",
+                "description": "(T)Tec-9 / (CT)Five-SeveN",
+                "command": "b24",
                 "row": 3,
                 "column": 1,
                 "width": 1,
                 "height": 1
             },
             {
-                "label": "button 1.15",
-                "description": "button 14",
-                "command": "o",
+                "label": "Deagle/Revolver",
+                "description": "Desert Eagle / Revolver",
+                "command": "b25",
+                "row": 4,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "XM1014/Nova",
+                "description": "Shotgun",
+                "command": "b31",
+                "row": 0,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Negev/M249",
+                "description": "Light Machine Gun",
+                "command": "b32",
+                "row": 1,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "MP7/MP5-SD",
+                "description": "Hi-Cal SMGs",
+                "command": "b33",
+                "row": 2,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Bizon/UMP-45",
+                "description": "Mid-Cal SMGs",
+                "command": "b34",
                 "row": 3,
                 "column": 2,
                 "width": 1,
                 "height": 1
             },
             {
-                "label": "button 1.16",
-                "description": "button 15",
-                "command": "p",
+                "label": "Mac-10/MP9",
+                "description": "Low-Cal SMGs",
+                "command": "b35",
+                "row": 4,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Galil/FAMAS",
+                "description": "Low-Cal Rifle",
+                "command": "b41",
+                "row": 0,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "AK47/M4",
+                "description": "Hi-Cal Rifle",
+                "command": "b42",
+                "row": 1,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Scout",
+                "description": "Low-Cal Sniper",
+                "command": "b43",
+                "row": 2,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Krieg/BullPup",
+                "description": "Scoped Rifle",
+                "command": "b44",
                 "row": 3,
                 "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "AWP",
+                "description": "Sniper",
+                "command": "b45",
+                "row": 4,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Flash",
+                "description": "Flashbang",
+                "command": "b51",
+                "row": 0,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Smoke",
+                "description": "Smoke Grenade",
+                "command": "b52",
+                "row": 1,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "HE-Nade",
+                "description": "High-Explosive Grenade",
+                "command": "b53",
+                "row": 2,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Molotov",
+                "description": "Molotov Cocktail / Incendiary Grenade",
+                "command": "b54",
+                "row": 3,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Decoy",
+                "description": "Decoy Grenade",
+                "command": "b55",
+                "row": 4,
+                "column": 4,
                 "width": 1,
                 "height": 1
             }
