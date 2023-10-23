@@ -48,8 +48,7 @@ void receiveData(int bytecount) {
       char currentChar = receivedData.charAt(i);
       Media_Keyboard.write(currentChar);
     }
-    Media_keyboard(KEY_ESC);
-    Media_keyboard(KEY_ESC);
+    Media_Keyboard.write(KEY_ESC);
+    Media_Keyboard.write(KEY_ESC);
   }
 }
-
