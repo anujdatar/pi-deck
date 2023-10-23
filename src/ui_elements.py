@@ -144,32 +144,6 @@ class KeypadFrame(Frame):
             self.grid_columnconfigure(j, weight=1)
 
 
-def generate_keypad_grid(parent: Frame, buttons: List[Key]) -> Frame:
-    keypad_frame = Frame(parent)
-    keypad_frame.pack(fill="both", expand=True)
-
-    num_buttons = len(buttons)
-    max_columns = int(num_buttons**0.5) + 1
-    num_rows = (num_buttons + max_columns - 1) // max_columns
-    num_columns = (num_buttons + num_rows - 1) // num_rows
-
-    for i, button in enumerate(buttons):
-        row = i // num_columns
-        column = i % num_columns
-        DeckButton(
-            keypad_frame,
-            text=button.label,
-            command=partial(send_i2c_msg, button.command),
-        ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
-
-    for i in range(num_rows):
-        keypad_frame.grid_rowconfigure(i, weight=1)
-    for j in range(num_columns):
-        keypad_frame.grid_columnconfigure(j, weight=1)
-
-    return keypad_frame
-
-
 class PiDeckUi(Tk):
     def __init__(self):
         super().__init__()
@@ -215,9 +189,6 @@ class PiDeckUi(Tk):
 
         # *************************************************************
         # add the initial buttons
-        # self.keypad_frame = generate_keypad_grid(
-        #     self.app_container, self.keymaps[self.active_tab.get()].keymap
-        # )
         self.keypad_frame = KeypadFrame(
             self.app_container, self.keymaps[0].packing, self.keymaps[0].keymap
         )
@@ -245,9 +216,6 @@ class PiDeckUi(Tk):
         new_tab = self.active_tab.get()
         if self.keypad_frame is not None:
             self.keypad_frame.destroy()
-        # self.keypad_frame = generate_keypad_grid(
-        #     self.app_container, self.keymaps[new_tab].keymap
-        # )
         self.keypad_frame = KeypadFrame(
             self.app_container,
             self.keymaps[new_tab].packing,
