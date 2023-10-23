@@ -11,6 +11,8 @@ class Key:
     column: Union[int, None] = None
     width: Union[int, None] = None
     height: Union[int, None] = None
+    imgPath: Union[str, None] = None
+    type: str = "text"
 
 
 @dataclass
