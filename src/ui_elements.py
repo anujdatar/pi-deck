@@ -108,18 +108,25 @@ class KeypadFrame(Frame):
 
     def manual_pack(self) -> None:
         for button in self.buttons:
+            if (
+                button.row is None
+                or button.column is None
+                or button.height is None
+                or button.width is None
+            ):
+                raise ValueError("Row and column must be specified for manual packing.")
             DeckButton(
                 self,
                 text=button.label,
                 command=partial(send_i2c_msg, button.command),
             ).grid(
-                row=button.row if button.row is not None else 0,
-                column=button.column if button.column is not None else 0,
+                row=button.row,
+                column=button.column,
                 padx=5,
                 pady=5,
                 sticky="nsew",
-                rowspan=button.height if button.height is not None else 1,
-                columnspan=button.width if button.width is not None else 1,
+                rowspan=button.height,
+                columnspan=button.width,
             )
         # print(type(self.buttons[-1].row), type(self.buttons[-1].column))
         num_rows: int = (
