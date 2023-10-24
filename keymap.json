@@ -1,12 +1,14 @@
 [
     {
-        "title": "Counter Strike 2",
-        "description": "Counter Strike 2 Buy Menu",
+        "title": "Counter Strike 2 (CT)",
+        "description": "Counter Strike 2 CT Buy Menu",
         "packing": "manual",
         "keymap": [
             {
                 "label": "Kevlar",
                 "description": "Kevlar Vest Only",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/kevlar.png",
                 "command": "b11",
                 "row": 0,
                 "column": 0,
@@ -16,6 +18,8 @@
             {
                 "label": "Kevlar+Helmet",
                 "description": "Kevlar and Helmet",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/kevlar_helmet.png",
                 "command": "b12",
                 "row": 1,
                 "column": 0,
@@ -25,6 +29,8 @@
             {
                 "label": "Zeus",
                 "description": "Zeus x27 Taser",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/zeus.png",
                 "command": "b13",
                 "row": 2,
                 "column": 0,
@@ -32,8 +38,10 @@
                 "height": 1
             },
             {
-                "label": "(CT) Defuse Kit",
+                "label": "Defuse Kit",
                 "description": "Defuse Kit",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/defuse.png",
                 "command": "b14",
                 "row": 3,
                 "column": 0,
@@ -41,8 +49,10 @@
                 "height": 1
             },
             {
-                "label": "Glock/USP/P2000",
-                "description": "Default Pistol",
+                "label": "P2000",
+                "description": "Default Pistol - USP-S / P2000 / Glock-18",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/p2000.png",
                 "command": "b21",
                 "row": 0,
                 "column": 1,
@@ -51,7 +61,9 @@
             },
             {
                 "label": "Dualies",
-                "description": "Dual Barettas",
+                "description": "Dual Berettas",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/dualies.png",
                 "command": "b22",
                 "row": 1,
                 "column": 1,
@@ -59,8 +71,10 @@
                 "height": 1
             },
             {
-                "label": "P250",
-                "description": "P250",
+                "label": "CZ75",
+                "description": "CZ75-Auto / P250",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/cz75.png",
                 "command": "b23",
                 "row": 2,
                 "column": 1,
@@ -68,8 +82,10 @@
                 "height": 1
             },
             {
-                "label": "Tec9/Five-SeveN",
-                "description": "(T)Tec-9 / (CT)Five-SeveN",
+                "label": "Five-SeveN",
+                "description": "Five-SeveN / Tec-9",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/five_seven.png",
                 "command": "b24",
                 "row": 3,
                 "column": 1,
@@ -77,8 +93,10 @@
                 "height": 1
             },
             {
-                "label": "Deagle/Revolver",
+                "label": "Deagle",
                 "description": "Desert Eagle / Revolver",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/deagle.png",
                 "command": "b25",
                 "row": 4,
                 "column": 1,
@@ -86,8 +104,10 @@
                 "height": 1
             },
             {
-                "label": "XM1014/Nova",
-                "description": "Shotgun",
+                "label": "XM1014",
+                "description": "Shotgun - Nova / XM1014 / MAG-7 / Sawed-Off",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/xm1014.png",
                 "command": "b31",
                 "row": 0,
                 "column": 2,
@@ -95,8 +115,10 @@
                 "height": 1
             },
             {
-                "label": "Negev/M249",
-                "description": "Light Machine Gun",
+                "label": "Negev",
+                "description": "Light Machine Gun - Negev / M249",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/negev.png",
                 "command": "b32",
                 "row": 1,
                 "column": 2,
@@ -104,8 +126,10 @@
                 "height": 1
             },
             {
-                "label": "MP7/MP5-SD",
-                "description": "Hi-Cal SMGs",
+                "label": "MP7",
+                "description": "Hi-Cal SMGs - MP7 / MP5-SD",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/mp7.png",
                 "command": "b33",
                 "row": 2,
                 "column": 2,
@@ -113,8 +137,10 @@
                 "height": 1
             },
             {
-                "label": "Bizon/UMP-45",
-                "description": "Mid-Cal SMGs",
+                "label": "PP Bizon",
+                "description": "Mid-Cal SMGs - PP Bizon / UMP-45 / P90",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/bizon.png",
                 "command": "b34",
                 "row": 3,
                 "column": 2,
@@ -122,8 +148,10 @@
                 "height": 1
             },
             {
-                "label": "Mac-10/MP9",
-                "description": "Low-Cal SMGs",
+                "label": "MP9",
+                "description": "Low-Cal SMGs - MP9 / MAC-10",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/mp9.png",
                 "command": "b35",
                 "row": 4,
                 "column": 2,
@@ -131,8 +159,10 @@
                 "height": 1
             },
             {
-                "label": "Galil/FAMAS",
-                "description": "Low-Cal Rifle",
+                "label": "FAMAS",
+                "description": "Low-Cal Rifle - FAMAS / Galil AR",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/famas.png",
                 "command": "b41",
                 "row": 0,
                 "column": 3,
@@ -140,8 +170,10 @@
                 "height": 1
             },
             {
-                "label": "AK47/M4",
-                "description": "Hi-Cal Rifle",
+                "label": "M4A1-S",
+                "description": "Hi-Cal Rifle - AK47 / M4A4 / M4A1-S",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/m4a1s.png",
                 "command": "b42",
                 "row": 1,
                 "column": 3,
@@ -151,6 +183,8 @@
             {
                 "label": "Scout",
                 "description": "Low-Cal Sniper",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/scout.png",
                 "command": "b43",
                 "row": 2,
                 "column": 3,
@@ -158,8 +192,10 @@
                 "height": 1
             },
             {
-                "label": "Krieg/BullPup",
-                "description": "Scoped Rifle",
+                "label": "AUG",
+                "description": "Scoped Rifle - AUG / SG 553",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/aug.png",
                 "command": "b44",
                 "row": 3,
                 "column": 3,
@@ -169,6 +205,8 @@
             {
                 "label": "AWP",
                 "description": "Sniper",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/awp.png",
                 "command": "b45",
                 "row": 4,
                 "column": 3,
@@ -178,6 +216,8 @@
             {
                 "label": "Flash",
                 "description": "Flashbang",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/flash.png",
                 "command": "b51",
                 "row": 0,
                 "column": 4,
@@ -187,6 +227,8 @@
             {
                 "label": "Smoke",
                 "description": "Smoke Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/smoke.png",
                 "command": "b52",
                 "row": 1,
                 "column": 4,
@@ -194,8 +236,10 @@
                 "height": 1
             },
             {
-                "label": "HE-Nade",
+                "label": "HE-Grenade",
                 "description": "High-Explosive Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/nade.png",
                 "command": "b53",
                 "row": 2,
                 "column": 4,
@@ -203,8 +247,10 @@
                 "height": 1
             },
             {
-                "label": "Molotov",
+                "label": "Incendiary",
                 "description": "Molotov Cocktail / Incendiary Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/incendiary.png",
                 "command": "b54",
                 "row": 3,
                 "column": 4,
@@ -214,6 +260,268 @@
             {
                 "label": "Decoy",
                 "description": "Decoy Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/ct/decoy.png",
+                "command": "b55",
+                "row": 4,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            }
+        ]
+    },
+    {
+        "title": "Counter Strike 2 (T)",
+        "description": "Counter Strike 2 T Buy Menu",
+        "packing": "manual",
+        "keymap": [
+            {
+                "label": "Kevlar",
+                "description": "Kevlar Vest Only",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/kevlar.png",
+                "command": "b11",
+                "row": 0,
+                "column": 0,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Kevlar+Helmet",
+                "description": "Kevlar and Helmet",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/kevlar_helmet.png",
+                "command": "b12",
+                "row": 1,
+                "column": 0,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Zeus",
+                "description": "Zeus x27 Taser",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/zeus.png",
+                "command": "b13",
+                "row": 2,
+                "column": 0,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Glock-18",
+                "description": "Default Pistol - USP-S / P2000 / Glock-18",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/glock.png",
+                "command": "b21",
+                "row": 0,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Dualies",
+                "description": "Dual Berettas",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/dualies.png",
+                "command": "b22",
+                "row": 1,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "P250",
+                "description": "CZ75-Auto / P250",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/p250.png",
+                "command": "b23",
+                "row": 2,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Tec-9",
+                "description": "Five-SeveN / Tec-9",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/tec9.png",
+                "command": "b24",
+                "row": 3,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Deagle",
+                "description": "Desert Eagle / Revolver",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/deagle.png",
+                "command": "b25",
+                "row": 4,
+                "column": 1,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "XM1014",
+                "description": "Shotgun - Nova / XM1014 / MAG-7 / Sawed-Off",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/xm1014.png",
+                "command": "b31",
+                "row": 0,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Negev",
+                "description": "Light Machine Gun - Negev / M249",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/negev.png",
+                "command": "b32",
+                "row": 1,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "MP5-SD",
+                "description": "Hi-Cal SMGs - MP7 / MP5-SD",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/mp5sd.png",
+                "command": "b33",
+                "row": 2,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "PP Bizon",
+                "description": "Mid-Cal SMGs - PP Bizon / UMP-45 / P90",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/bizon.png",
+                "command": "b34",
+                "row": 3,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "MAC-10",
+                "description": "Low-Cal SMGs - MP9 / MAC-10",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/mac10.png",
+                "command": "b35",
+                "row": 4,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Galil AR",
+                "description": "Low-Cal Rifle - FAMAS / Galil AR",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/galil.png",
+                "command": "b41",
+                "row": 0,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "AK47",
+                "description": "Hi-Cal Rifle - AK47 / M4A4 / M4A1-S",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/ak47.png",
+                "command": "b42",
+                "row": 1,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Scout",
+                "description": "Low-Cal Sniper",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/scout.png",
+                "command": "b43",
+                "row": 2,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "SG 553",
+                "description": "Scoped Rifle - AUG (BullPup) / SG 553 (Krieg)",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/krieg.png",
+                "command": "b44",
+                "row": 3,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "AWP",
+                "description": "Sniper",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/awp.png",
+                "command": "b45",
+                "row": 4,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Flash",
+                "description": "Flashbang",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/flash.png",
+                "command": "b51",
+                "row": 0,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Smoke",
+                "description": "Smoke Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/smoke.png",
+                "command": "b52",
+                "row": 1,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "HE-Grenade",
+                "description": "High-Explosive Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/nade.png",
+                "command": "b53",
+                "row": 2,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Molotov",
+                "description": "Molotov Cocktail / Incendiary Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/molotov.png",
+                "command": "b54",
+                "row": 3,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Decoy",
+                "description": "Decoy Grenade",
+                "type": "image",
+                "imgPath": "imgs/cs2_buy_menu/t/decoy.png",
                 "command": "b55",
                 "row": 4,
                 "column": 4,
@@ -230,6 +538,7 @@
             {
                 "label": "V-",
                 "description": "Volume Down",
+                "type": "text",
                 "command": "v-",
                 "row": 0,
                 "column": 0,
@@ -239,6 +548,7 @@
             {
                 "label": "Mute",
                 "description": "Volume Mute",
+                "type": "text",
                 "command": "mt",
                 "row": 0,
                 "column": 2,
@@ -248,6 +558,7 @@
             {
                 "label": "V+",
                 "description": "Volume Up",
+                "type": "text",
                 "command": "v+",
                 "row": 0,
                 "column": 3,
@@ -257,6 +568,7 @@
             {
                 "label": "Prev",
                 "description": "Previous Track",
+                "type": "text",
                 "command": "t-",
                 "row": 1,
                 "column": 0,
@@ -266,6 +578,7 @@
             {
                 "label": "Play/Pause",
                 "description": "Play/Pause",
+                "type": "text",
                 "command": "pp",
                 "row": 1,
                 "column": 1,
@@ -275,6 +588,7 @@
             {
                 "label": "Stop",
                 "description": "Stop",
+                "type": "text",
                 "command": "st",
                 "row": 1,
                 "column": 3,
@@ -284,6 +598,7 @@
             {
                 "label": "Next",
                 "description": "Next Track",
+                "type": "text",
                 "command": "t+",
                 "row": 1,
                 "column": 4,
