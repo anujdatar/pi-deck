@@ -14,29 +14,21 @@ from typing import List, Optional, Callable
 from src import Key, keymap_json_loader, send_i2c_msg, reboot, shutdown
 
 
-class DeckTxtButton(Button):
+class DeckButton(Button):
     def __init__(
         self,
         parent: Optional[Frame] = None,
-        text: str = "",
+        text: Optional[str] = None,
+        imgPath: Optional[str] = None,
         command: Optional[Callable[[], None]] = None,
     ):
         super().__init__(parent)
-        self.configure(text=text)
-        if command is not None:
-            self.configure(command=command)
-
-
-class DeckImgButton(Button):
-    def __init__(
-        self,
-        parent: Optional[Frame] = None,
-        image_path: str = "",
-        command: Optional[Callable[[], None]] = None,
-    ):
-        super().__init__(parent)
-        self.btn_image = PhotoImage(file=image_path)
-        self.configure(image=self.btn_image)
+        if imgPath is not None:
+            self.btn_image = PhotoImage(file=imgPath)
+            self.configure(image=self.btn_image)
+        else:
+            label = text if text is not None else "button"
+            self.configure(text=label)
         if command is not None:
             self.configure(command=command)
 
@@ -98,7 +90,7 @@ class KeypadFrame(Frame):
         for i, button in enumerate(self.buttons):
             row = i // num_columns
             column = i % num_columns
-            DeckTxtButton(
+            DeckButton(
                 self,
                 text=button.label,
                 command=partial(send_i2c_msg, button.command),
@@ -115,7 +107,7 @@ class KeypadFrame(Frame):
                 or button.width is None
             ):
                 raise ValueError("Row and column must be specified for manual packing.")
-            DeckTxtButton(
+            DeckButton(
                 self,
                 text=button.label,
                 command=partial(send_i2c_msg, button.command),
