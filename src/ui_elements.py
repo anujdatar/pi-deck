@@ -9,28 +9,40 @@ from tkinter import (
     Toplevel,
     ttk,
 )
-from typing import List, Optional, Callable
+from typing import List, Optional  # , Callable
 
 from src import Key, keymap_json_loader, send_i2c_msg, reboot, shutdown
 
 
+# class DeckButton(Button):
+#     def __init__(
+#         self,
+#         parent: Optional[Frame] = None,
+#         text: Optional[str] = None,
+#         imgPath: Optional[str] = None,
+#         command: Optional[Callable[[], None]] = None,
+#     ):
+#         super().__init__(parent)
+#         if imgPath is not None:
+#             self.btn_image = PhotoImage(file=imgPath)
+#             self.configure(image=self.btn_image)
+#         else:
+#             label = text if text is not None else "button"
+#             self.configure(text=label)
+#         if command is not None:
+#             self.configure(command=command)
+
+
 class DeckButton(Button):
-    def __init__(
-        self,
-        parent: Optional[Frame] = None,
-        text: Optional[str] = None,
-        imgPath: Optional[str] = None,
-        command: Optional[Callable[[], None]] = None,
-    ):
+    def __init__(self, key: Key, parent: Optional[Frame] = None):
         super().__init__(parent)
-        if imgPath is not None:
-            self.btn_image = PhotoImage(file=imgPath)
+        if key.type == "image" and key.imgPath is not None:
+            self.btn_image = PhotoImage(file=key.imgPath)
             self.configure(image=self.btn_image)
         else:
-            label = text if text is not None else "button"
-            self.configure(text=label)
-        if command is not None:
-            self.configure(command=command)
+            self.configure(text=key.label)
+
+        self.configure(command=partial(send_i2c_msg, key.command))
 
 
 class DeckFrame(Frame):
@@ -90,11 +102,13 @@ class KeypadFrame(Frame):
         for i, button in enumerate(self.buttons):
             row = i // num_columns
             column = i % num_columns
-            DeckButton(
-                self,
-                text=button.label,
-                command=partial(send_i2c_msg, button.command),
-            ).grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
+            # DeckButton(
+            #     self,
+            #     text=button.label,
+            #     command=partial(send_i2c_msg, button.command),
+            DeckButton(parent=self, key=button).grid(
+                row=row, column=column, padx=5, pady=5, sticky="nsew"
+            )
 
         self.expand_to_fit(num_rows, num_columns)
 
@@ -107,11 +121,11 @@ class KeypadFrame(Frame):
                 or button.width is None
             ):
                 raise ValueError("Row and column must be specified for manual packing.")
-            DeckButton(
-                self,
-                text=button.label,
-                command=partial(send_i2c_msg, button.command),
-            ).grid(
+            # DeckButton(
+            #     self,
+            #     text=button.label,
+            #     command=partial(send_i2c_msg, button.command),
+            DeckButton(parent=self, key=button).grid(
                 row=button.row,
                 column=button.column,
                 padx=5,

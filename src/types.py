@@ -7,12 +7,12 @@ class Key:
     label: str
     description: str
     command: str
+    type: str = "text"
     row: Union[int, None] = None
     column: Union[int, None] = None
     width: Union[int, None] = None
     height: Union[int, None] = None
     imgPath: Union[str, None] = None
-    type: str = "text"
 
 
 @dataclass
