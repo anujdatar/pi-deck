@@ -63,7 +63,9 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 # or
-pip install Pillow pyserial smbus2 ujson
+pip install pillow pyserial smbus2 ujson
+# on pi-zero I also had to install the following for Pillow to work
+sudo apt install libopenjp2-7
 ```
 
 6. With `lightdm` installed, you can now go into `raspi-config` >
