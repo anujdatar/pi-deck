@@ -13,6 +13,7 @@ class Key:
     width: Union[int, None] = None
     height: Union[int, None] = None
     imgPath: Union[str, None] = None
+    imgZoom: float = 1.0
 
 
 @dataclass
