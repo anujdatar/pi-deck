@@ -19,8 +19,9 @@ class DeckButton(Button):
         super().__init__(parent)
         if key.type == "image" and key.imgPath is not None:
             self.btn_image = Image.open(key.imgPath)
-            zoom = 0.75
-            pixels_x, pixels_y = tuple([int(zoom * x) for x in self.btn_image.size])
+            pixels_x, pixels_y = tuple(
+                [int(key.imgZoom * x) for x in self.btn_image.size]
+            )
             self.btn_image = ImageTk.PhotoImage(
                 self.btn_image.resize((pixels_x, pixels_y))
             )
