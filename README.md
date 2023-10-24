@@ -3,8 +3,13 @@
 Just a random test project because I had a Raspberry Pi Zero W and a Waveshare
 7-inch touch screen display lying around.
 
-As of now, the RPi Zero is connected to the touchscreen via HDMI and USB. It is
-connected to the Arduino over I2C. For more details about this decision check
+As of now, the RPi Zero is connected to the touchscreen via HDMI and USB. The Pi
+is connected to the Arduino over I2C. This just uses the USB HID protocol to
+emulate a keyboard and send keystrokes over USB. So you do not need
+any drivers on your host PC. You should be able to use an ESP-32 instead of
+the Arduino, so you can use Bluetooth instead of USB.
+
+For more details about why I chose this hardware set, check
 [here](#some-thoughts-and-notes-on-micro-controller-selection).
 
 The GUI is built in Tkinter, it's pretty lightweight, and I already know how to
@@ -128,10 +133,12 @@ python3 main.py
 ```
 
 10. Connect up the micro-controller to the Pi over I2C. Open the
-`micro_controller/leo-i2c` folder in the Arduino IDE and upload the code. You
-should be good to go.
+`micro_controller/leo-i2c` folder in the Arduino IDE and upload the code.
 > Note: Make sure you use a logic level converter if your micro-controller
 > has a 5V logic level.
+
+11. Update the sample `keymap.json` file to suit your needs and you should be
+good to go. The sample has key binds for buying equipment in CS2.
 
 ## Some Thoughts and Notes on Micro-controller Selection
 ### Pico
