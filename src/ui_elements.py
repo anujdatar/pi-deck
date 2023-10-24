@@ -3,13 +3,13 @@ from tkinter import (
     Button,
     Frame,
     IntVar,
-    PhotoImage,
     Radiobutton,
     Tk,
     Toplevel,
     ttk,
 )
-from typing import List, Optional  # , Callable
+from typing import List, Optional
+from PIL import Image, ImageTk
 
 from src import Key, keymap_json_loader, send_i2c_msg, reboot, shutdown
 
@@ -18,7 +18,12 @@ class DeckButton(Button):
     def __init__(self, key: Key, parent: Optional[Frame] = None):
         super().__init__(parent)
         if key.type == "image" and key.imgPath is not None:
-            self.btn_image = PhotoImage(file=key.imgPath)
+            self.btn_image = Image.open(key.imgPath)
+            zoom = 0.75
+            pixels_x, pixels_y = tuple([int(zoom * x) for x in self.btn_image.size])
+            self.btn_image = ImageTk.PhotoImage(
+                self.btn_image.resize((pixels_x, pixels_y))
+            )
             self.configure(image=self.btn_image)
         else:
             self.configure(text=key.label)
