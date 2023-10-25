@@ -1,5 +1,96 @@
 [
     {
+        "title": "Media Controls",
+        "description": "Simple media controls",
+        "packing": "manual",
+        "keymap": [
+            {
+                "label": "V-",
+                "description": "Volume Down",
+                "type": "image",
+                "imgPath": "imgs/media/volume-down.png",
+                "imgZoom": 0.1,
+                "command": "v-",
+                "row": 0,
+                "column": 0,
+                "width": 2,
+                "height": 1
+            },
+            {
+                "label": "Mute",
+                "description": "Volume Mute",
+                "type": "image",
+                "imgPath": "imgs/media/volume-mute.png",
+                "imgZoom": 0.1,
+                "command": "mt",
+                "row": 0,
+                "column": 2,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "V+",
+                "description": "Volume Up",
+                "type": "image",
+                "imgPath": "imgs/media/volume-up.png",
+                "imgZoom": 0.1,
+                "command": "v+",
+                "row": 0,
+                "column": 3,
+                "width": 2,
+                "height": 1
+            },
+            {
+                "label": "Prev",
+                "description": "Previous Track",
+                "type": "image",
+                "imgPath": "imgs/media/previous-track.png",
+                "imgZoom": 0.1,
+                "command": "t-",
+                "row": 1,
+                "column": 0,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Play/Pause",
+                "description": "Play/Pause",
+                "type": "image",
+                "imgPath": "imgs/media/play-pause.png",
+                "imgZoom": 0.1,
+                "command": "pp",
+                "row": 1,
+                "column": 1,
+                "width": 2,
+                "height": 1
+            },
+            {
+                "label": "Stop",
+                "description": "Stop",
+                "type": "image",
+                "imgPath": "imgs/media/stop.png",
+                "imgZoom": 0.1,
+                "command": "st",
+                "row": 1,
+                "column": 3,
+                "width": 1,
+                "height": 1
+            },
+            {
+                "label": "Next",
+                "description": "Next Track",
+                "type": "image",
+                "imgPath": "imgs/media/next-track.png",
+                "imgZoom": 0.1,
+                "command": "t+",
+                "row": 1,
+                "column": 4,
+                "width": 1,
+                "height": 1
+            }
+        ]
+    },
+    {
         "title": "Counter Strike 2 (CT)",
         "description": "Counter Strike 2 CT Buy Menu",
         "packing": "manual",
@@ -571,97 +662,6 @@
                 "imgZoom": 0.75,
                 "command": "b55",
                 "row": 4,
-                "column": 4,
-                "width": 1,
-                "height": 1
-            }
-        ]
-    },
-    {
-        "title": "Media Controls",
-        "description": "Simple media controls",
-        "packing": "manual",
-        "keymap": [
-            {
-                "label": "V-",
-                "description": "Volume Down",
-                "type": "image",
-                "imgPath": "imgs/media/volume-down.png",
-                "imgZoom": 0.1,
-                "command": "v-",
-                "row": 0,
-                "column": 0,
-                "width": 2,
-                "height": 1
-            },
-            {
-                "label": "Mute",
-                "description": "Volume Mute",
-                "type": "image",
-                "imgPath": "imgs/media/volume-mute.png",
-                "imgZoom": 0.1,
-                "command": "mt",
-                "row": 0,
-                "column": 2,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "V+",
-                "description": "Volume Up",
-                "type": "image",
-                "imgPath": "imgs/media/volume-up.png",
-                "imgZoom": 0.1,
-                "command": "v+",
-                "row": 0,
-                "column": 3,
-                "width": 2,
-                "height": 1
-            },
-            {
-                "label": "Prev",
-                "description": "Previous Track",
-                "type": "image",
-                "imgPath": "imgs/media/previous-track.png",
-                "imgZoom": 0.1,
-                "command": "t-",
-                "row": 1,
-                "column": 0,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "Play/Pause",
-                "description": "Play/Pause",
-                "type": "image",
-                "imgPath": "imgs/media/play-pause.png",
-                "imgZoom": 0.1,
-                "command": "pp",
-                "row": 1,
-                "column": 1,
-                "width": 2,
-                "height": 1
-            },
-            {
-                "label": "Stop",
-                "description": "Stop",
-                "type": "image",
-                "imgPath": "imgs/media/stop.png",
-                "imgZoom": 0.1,
-                "command": "st",
-                "row": 1,
-                "column": 3,
-                "width": 1,
-                "height": 1
-            },
-            {
-                "label": "Next",
-                "description": "Next Track",
-                "type": "image",
-                "imgPath": "imgs/media/next-track.png",
-                "imgZoom": 0.1,
-                "command": "t+",
-                "row": 1,
                 "column": 4,
                 "width": 1,
                 "height": 1
