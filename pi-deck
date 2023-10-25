@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+PI_DECK_DIR="$HOME/pi-deck"
+cd $PI_DECK_DIR
+
+if [ -f "$PI_DECK_DIR/.venv/bin/python" ]; then
+    $PI_DECK_DIR/.venv/bin/python main.py
+else
+    python3 main.py
+fi
