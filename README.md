@@ -18,12 +18,22 @@ build UIs in python-tkinter.
 ## Setting up the Raspberry Pi OS for this.
 1. Write the legacy Raspberry Pi OS minimal to an SD card. Setup WiFi and SSH
 
-2. Add power button functionality. Edit `/boot/config.txt`
+2. Add power button functionality and enable I2C/UART. Edit `/boot/config.txt`
     ```bash
-    # By default pin #5 is power switch, but you can change it
+    # uncomment following line to enable I2C
+    dtparam=i2c_arm=on
+
+    # uncomment following line to enable UART
+    [all]
+    enable_uart=1
+
     # Pin to ground acts as power On/Off
-    dtoverlay=gpio-shutdown,gpio_pin=X
+    # By default pin 5 (GPI O3) is power switch, but you can change it
+    dtoverlay=gpio-shutdown,gpio_pin=17
     ```
+    > I am using pin 11 (GPIO 17), because GPIO 3 is also SCL for I2C.
+    > GPIO 17 becomes the power OFF pin, GPIO 3 still remains as power ON.
+    > Can't really change that easily.
 
 3. Update and upgrade the Pi. Install the dependencies for the GUI, some are a
 bit excessive, and may not be needed. I'll refine the list later.
