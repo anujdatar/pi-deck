@@ -30,7 +30,7 @@ bit excessive, and may not be needed. I'll refine the list later.
     ```bash
     sudo apt install --no-install-recommends -y \
     xserver-xorg \
-    x11-server-utils \
+    x11-xserver-utils \
     xinit \
     lightdm \
     openbox \
