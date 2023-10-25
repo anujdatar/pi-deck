@@ -135,6 +135,7 @@ class PiDeckUi(Tk):
 
         # set app root's attributes
         self.title("PiDeck")
+        # self.geometry("640x480")
         self.attributes("-fullscreen", True)  # set fullscreen  # type:ignore
         # self.attributes("-zoomed", True)  # set maximized  # type:ignore
         # self.overrideredirect(True)  # remove titlebar
