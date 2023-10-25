@@ -132,24 +132,18 @@ the system up, login to default user and start `Openbox`
     ln -s /usr/bin/sakura ~/Desktop/sakura
     ln -s ~/.local/bin/poweroff ~/Desktop/poweroff
     ln -s ~/.local/bin/reboot ~/Desktop/reboot
+    ln -s $PI_DECK_DIR/pi-deck ~/Desktop/pi-deck
     ```
-    I also added a pi-deck executable file to the desktop. The exact syntax will
-    depend on your choice of environment setup.
-    ```bash
-    !#/usr/bin/bash
-    cd $PI_DECK_FOLDER
-    # for local virtual environment
-    .venv/bin/python main.py
-    # or if you global system packages
-    python3 main.py
-    ```
+    I also created a symlink to the pi-deck executable file on the desktop.
+    The sample executable assumes that your install path is `~/pi-deck`. You may
+    need to change that.
 
 10. Connect up the micro-controller to the Pi over I2C. Open the
 `micro_controller/leo-i2c` folder in the Arduino IDE and upload the code.
     > Note: Make sure you use a logic level converter if your micro-controller
     > has a 5V logic level.
 
-11. Use the `sample_keymap.json` file to create your own `keymap.json` file and
+11.  Use the `sample_keymap.json` file to create your own `keymap.json` file and
 you should be good to go. The sample has key binds for basic media actions,
 and couple of tabs for buying equipment in CS2.
 
